@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman2</title>
+
+<style>
+	
+</style>
+</head>
+<body>
+	<h2>Guessing Game</h2>
+  <form>
+  Enter a number from 1 to 100!
+	<input type="text" id="guess" size="8"> <br/>
+	
+	<input type="button" value="Guess" onclick="checkGuess()"> <br/>
+	
+	<input type="text" id="output" size="40"> <br/>
+  </form>
+
+
+<script type="text/javascript">
+
+//random number rounded down, math.random gives number only between 0-1
+var theNumber= Math.floor(Math.random()*100+1);
+
+	function checkGuess(){
+		var guess= document.getElementById('guess');
+		var myNumber= guess.value;
+		var output = document.getElementById('output');
+		if(myNumber<theNumber){
+		output.value = 'Too Low, Try Again!';
+		// alert('Too Low, Try Again!');
+		} 
+		else if (myNumber>theNumber)
+		output.value = 'Too High, Try Again!';
+	}	
+
+</script>
+
+</body>
+</html>
